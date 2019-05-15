@@ -1,0 +1,25 @@
+
+.signup-form
+{
+  width: 600px;
+  margin: auto;
+}
+
+form{
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ padding: 30px;
+ 
+}
+
+form button
+{
+  margin-top: 20px;
+}
+
+ mat-form-field,mat-checkbox {
+  margin-top: 10px;
+}
+
+

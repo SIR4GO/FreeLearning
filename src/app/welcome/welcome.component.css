@@ -1,0 +1,161 @@
+
+
+body
+{
+    background-color: #ffffff  !important;
+    overflow-x: hidden;
+}
+
+.default-link
+{
+    color: black;
+
+}
+
+.default-link:hover
+{
+    color: black;
+    text-decoration: none;
+}
+
+/*  start header */
+/* start nabar */
+header
+{
+    background-image: url('../../assets/Layer.png');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.nabar
+{
+    background-color: #ffffff;
+}
+.nabar .container
+{
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+}
+.nabar .container .logo
+{
+    margin: auto 0;
+
+}
+.nabar .logo img
+{
+    width: 30px;
+    height: 25px;
+}
+.nabar .nav-list
+{
+    list-style: none;
+    margin: auto 0;
+
+}
+
+.nabar .nav-list li
+{
+   display: inline;
+   margin-left: 30px;
+   font-size: 13px;
+   font-weight: bold;
+   text-transform: uppercase;
+}
+
+.header-body
+{
+    position: relative;
+    height: 100%;
+}
+.header-body .header-content
+{
+    width: 450px;
+    height: 110px;
+    margin: 280px auto;
+    background-color: #ebeeee;
+    border-radius: 2px;
+    display: flex;
+
+
+}
+.header-body .header-content .box
+{
+    margin: auto 20px;
+}
+.header-body .header-content .box h1
+{
+   color: #ff6600;
+   text-transform: uppercase
+
+}
+
+.header-body .header-content .box h4
+{
+    font-weight: normal;
+}
+
+
+
+.page-body .container #aboutUs
+{
+
+    height: 250px;
+    margin: 60px 0;
+}
+.page-body .container .aboutUs-head
+{
+    margin: 90px 0;
+}
+.page-body .container .aboutUs-head h1
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+.page-body .container #aboutUs .about-icon
+{
+    height: 50%;
+    display: flex;
+}
+.page-body .container #aboutUs .about-icon img
+{
+    margin: auto;
+    width: 80px;
+    height: 80px;
+}
+
+.page-body .container #aboutUs .about-content
+{
+    height: 50%;
+    overflow: hidden;
+
+}
+
+.page-body .container #aboutUs .about-content h5
+{
+   text-align: center;
+}
+.page-body .container #aboutUs .about-content p
+{
+    text-align: center;
+    font-size: 14px;
+}
+
+.carouser-card{
+   background-color: #3b3b3d;
+   height: 400px;
+   position: relative;
+   margin-bottom: 100px;
+
+}
+
+carousel{
+    position: absolute;
+    top: 22% !important;
+    bottom: 25% !important;
+}
+/* edit crousel image height*/
+.edit-ee{
+    height: 280px;
+ }
