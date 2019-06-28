@@ -34,8 +34,7 @@ import { LoginAdminComponent } from './dashboard/auth/login-admin/login-admin.co
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    CarouselModule.forRoot()
-
+    CarouselModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

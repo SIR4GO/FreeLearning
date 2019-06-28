@@ -6,7 +6,7 @@
 
       <mat-toolbar class="login-toolbar">
         <div>
-           Free Learning
+           Dashboard
         </div>
         <div style="margin-right:15px">
           Login
@@ -16,11 +16,14 @@
       <form class="example-form">
         <h3 style="color:#8492af ; text-align: center; margin-bottom: 40px">Welcome back!</h3>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Username" >
+            <input matInput placeholder="User name" >
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <input type="password" matInput placeholder="Password">
+            <input type="password" matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
           </mat-form-field>
 
           <button  style="margin-top: 30px;" mat-raised-button color="primary">Login</button>

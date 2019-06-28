@@ -9,12 +9,8 @@ import { LoginAdminComponent } from './dashboard/auth/login-admin/login-admin.co
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'article' , component: ArticleComponent},
-  { path: 'dashboard' , component: DashboardComponent , children:
-  [
-     {path: 'login-admin' , component: LoginAdminComponent},
-
-  ]}
-
+  {path: 'login-admin' , component: LoginAdminComponent},
+  { path: 'dashboard' , component: DashboardComponent },
 ];
 
 @NgModule({

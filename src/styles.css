@@ -14,3 +14,7 @@
   background-color: rgba(0, 0, 0, .4);
   display: flex;
 }
+
+body{
+  margin: 0;
+}

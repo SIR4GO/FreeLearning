@@ -8,6 +8,7 @@ import * as $ from 'jquery';
 })
 export class LoginAdminComponent implements OnInit {
 
+  hide = true;
   constructor() { }
 
   ngOnInit() {

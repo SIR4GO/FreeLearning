@@ -1,36 +1,33 @@
 .page-body
 {
-  background-image:url("../../../../assets/dashboard2.png");
-
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  position: relative !important;
-
+    background-image:url("../../../../assets/dashboard2.png");
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    position: relative !important;
 }
 
 .login-board
 {
-  height: 63%;
-  width: 50%;
-  display: block;
-  margin: auto;
-  padding: 0;
+    height: 65%;
+    width: 50%;
+    display: block;
+    margin: auto;
+    padding: 0;
 }
 .login-toolbar
 {
-  background-color:#0e1a35 ;
- color: white;
- display: flex;
- justify-content: space-between;
+    background-color:#0e1a35 ;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
 }
 
 .example-form
 {
-  margin: auto;
-    display: block;
     width: 55%;
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
+    margin: 60px auto auto;
 }
