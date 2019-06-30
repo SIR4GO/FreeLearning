@@ -3,10 +3,10 @@
 }
 .menu{
   background-color: #0E1935;
-  width: 20%;
+  width: 23%;
 }
 .content{
-  width: 80%;
+  width: 100%;
   background-color: #F5F6FA;
 }
 .content mat-toolbar
@@ -31,3 +31,13 @@
   margin: auto;
   display: block;
 }
+
+.split-effect{
+  margin-left: 0;
+  transition: margin-left 0.5s ;
+}
+
+.toggle-menu{
+  margin-left: -23%;
+}
+

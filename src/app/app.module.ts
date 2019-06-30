@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -11,9 +10,12 @@ import { LoginComponent } from './dashboard/auth/login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { ArticleComponent } from './article/article.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginAdminComponent } from './dashboard/auth/login-admin/login-admin.component';
+import { PostComponent } from './post/post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +27,8 @@ import { LoginAdminComponent } from './dashboard/auth/login-admin/login-admin.co
     WelcomeComponent,
     ArticleComponent,
     DashboardComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import { LoginAdminComponent } from './dashboard/auth/login-admin/login-admin.co
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
+    ReactiveFormsModule,
     CarouselModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
