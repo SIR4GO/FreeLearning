@@ -1,39 +1,72 @@
 
 <mat-horizontal-stepper class="stepper-edit" #stepper>
+
+  // step1
   <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+    <form [formGroup]="firstFormGroup" style="display: flex ; flex-direction: column ;">
+      <ng-template matStepLabel>Fill out post text</ng-template>
+      <mat-form-field style="margin-top:30px">
+        <input matInput placeholder="Post Title" formControlName="firstCtrl" required>
+        <mat-hint align="start"><strong>Post's title should be descriptive</strong> </mat-hint>
       </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
+
+      <mat-form-field style="margin-top:30px" class="example-full-width">
+        <input type="text" placeholder="Enter post category" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-hint align="start"><strong>Post's category should be from popup recommendation</strong> </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field style="margin-top:20px" class="example-full-width">
+        <textarea #post style="resize: none" rows="6" matInput placeholder="Post Text" required></textarea>
+        <mat-hint align="start"><strong>Characters count </strong> </mat-hint>
+        <mat-hint align="end">{{post.value.length}} </mat-hint>
+      </mat-form-field>
+
+      <div style="margin:50px 0 0  0; ">
+        <button style="float: right" mat-raised-button color="primary" mat-button matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
+
+  //step 2
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Address" formControlName="secondCtrl" required>
+    <form [formGroup]="secondFormGroup" style="display: flex ; flex-direction: column ;">
+      <ng-template matStepLabel>Fill out post media</ng-template>
+      <mat-form-field style="margin-top:30px">
+        <input matInput placeholder="Enter photo for post's header " formControlName="secondCtrl" required>
+        <mat-hint align="start"><strong>Photo should be url eg: https://dropbox/test.jpg</strong> </mat-hint>
       </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+      <mat-form-field style="margin-top:20px">
+        <input matInput placeholder="Enter post video" formControlName="secondCtrl" required>
+        <mat-hint align="start"><strong>Photo should be embed url eg: https://www.youtube.com/embed/DUeEPfF8r-M </strong> </mat-hint>
+      </mat-form-field>
+      <mat-form-field style="margin-top:20px">
+        <input matInput placeholder="Enter post # Tags" formControlName="secondCtrl" required>
+        <mat-hint align="start"><strong>Enter Tags separated by  (,) </strong> </mat-hint>
+      </mat-form-field>
+      <div style="display: flex ; justify-content: space-between ; margin-top: 150px">
+        <button mat-raised-button color="primary"   mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary"  mat-button matStepperNext>Next</button>
       </div>
     </form>
   </mat-step>
+
+  // step 3
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-         You are now done.
+    <div style="margin: 70px 0 15px 0px">You are now done.</div>
     <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-      <button mat-button (click)="openModal(template)">Review</button> -->
+      <button style="background-color: gray" mat-raised-button color="primary" mat-button matStepperPrevious>Back</button>
+      <button style="background-color: gray" mat-raised-button color="primary" mat-button (click)="openModal(template)">Review</button>
+      <button style="background-color: green" mat-raised-button color="primary" mat-button >Confirm post</button>
     </div>
   </mat-step>
-</mat-horizontal-stepper>
 
+</mat-horizontal-stepper>
 
 
 
