@@ -5,6 +5,7 @@ import { ArticleComponent } from './article/article.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginAdminComponent } from './dashboard/auth/login-admin/login-admin.component';
 import { PostComponent } from './post/post.component';
+import {PostHomeComponent} from './post-home/post-home.component';
 
 
 const routes: Routes = [
@@ -12,10 +13,9 @@ const routes: Routes = [
   { path: 'article' , component: ArticleComponent},
   {path: 'login-admin' , component: LoginAdminComponent},
   { path: 'dashboard' , component: DashboardComponent , children: [
-
      {path: 'post' , component: PostComponent}
-
   ]},
+  {path: 'posts' , component: PostHomeComponent}
 ];
 
 @NgModule({
