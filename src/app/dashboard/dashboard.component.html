@@ -1,9 +1,32 @@
 <section class="split-menu">
+
+
   <section class="menu split-effect">
 
+    <mat-list style="padding: 10px ; margin-top: 120px;">
+
+      <a href="#">
+          <mat-list-item class="list-edit">
+              <mat-icon  class="icon-edit" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+              Add Post
+          </mat-list-item>
+          <mat-divider class="divider-edit"></mat-divider>
+      </a>
+
+      <a href="#">
+          <mat-list-item class="list-edit">
+              <mat-icon class="icon-edit" aria-hidden="false" aria-label="Example home icon">list_alt</mat-icon>
+               Show Posts
+          </mat-list-item>
+      </a>
+
+
+
+    </mat-list>
   </section>
+
   <section class="content">
-    <mat-toolbar >
+    <mat-toolbar style="height: 10%" >
       <section style="display: flex">
         <mat-icon style= " cursor: pointer" (click)="controllMenue()" aria-hidden="false" aria-label="Example home icon">vertical_split</mat-icon>
       </section>
@@ -22,7 +45,7 @@
 
 
     <router-outlet></router-outlet>
-   
+
 
   </section>
 </section>

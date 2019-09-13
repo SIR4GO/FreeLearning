@@ -41,3 +41,16 @@
   margin-left: -23%;
 }
 
+.list-edit{
+  color: white;
+  font-size: 14px;
+}
+
+.divider-edit{
+   background-color: white;
+}
+
+.icon-edit{
+  font-size: 22px ;
+   margin-right: 15px
+}

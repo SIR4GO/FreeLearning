@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginAdminComponent } from './dashboard/auth/login-admin/login-admin.component';
 import { PostComponent } from './post/post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostHomeComponent } from './post-home/post-home.component';
 
 
 
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ArticleComponent,
     DashboardComponent,
     LoginAdminComponent,
-    PostComponent
+    PostComponent,
+    PostHomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,26 +1,61 @@
 
 <mat-horizontal-stepper class="stepper-edit" #stepper>
+
   <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
+    <form [formGroup]="firstFormGroup" style="padding: 20px">
+      <ng-template matStepLabel>Fill out Post's Text</ng-template>
+
+          <mat-form-field style="display: block" appearance="fill">
+            <mat-label> Title</mat-label>
+            <input [(ngModel)]="postRequest.title"  matInput placeholder="Enter Post's Title ">
+            <mat-icon matSuffix>title</mat-icon>
+            <mat-hint>Enter meaningful title</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="display: block ; margin-top: 15px" appearance="fill">
+              <mat-label>Body </mat-label>
+              <textarea [(ngModel)]="postRequest.description" class="textArea-edit"  matInput placeholder="Enter Post's body "></textarea>
+              <mat-hint>Enter meaningful describtion</mat-hint>
+          </mat-form-field>
+
+
+      <div style="position: relative ; margin-top: 100px ; height: 50px">
+        <button style="position: absolute; right: 0px" mat-button matStepperNext>Next</button>
       </div>
+
     </form>
   </mat-step>
+
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Address" formControlName="secondCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+    <form [formGroup]="secondFormGroup" style="padding: 20px">
+      <ng-template matStepLabel>Fill out post's media</ng-template>
+
+          <mat-form-field style="display: block ; margin-top: 15px" appearance="fill">
+            <mat-label> Photo </mat-label>
+            <input [(ngModel)]= "postRequest.photo_url" matInput placeholder="Enter Post's photo ">
+            <mat-icon matSuffix>photo</mat-icon>
+            <mat-hint>Enter photo's url</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field style="display: block ; margin-top: 15px" appearance="fill">
+              <mat-label> Video </mat-label>
+              <input [(ngModel)]="postRequest.video_embed" matInput placeholder="Enter Post's video ">
+              <mat-icon matSuffix>movie</mat-icon>
+              <mat-hint>Enter video's url , embded from youtube , viemo , etc</mat-hint>
+           </mat-form-field>
+
+           <mat-form-field style="display: block ; margin-top: 15px" appearance="fill">
+              <mat-label> Hashtags </mat-label>
+              <input [(ngModel)]= "postRequest.tags" matInput placeholder="Enter Post's hashtags ">
+              <mat-icon matSuffix>fullscreen_exit</mat-icon>
+              <mat-hint>Enter video's hashtags eg: #Grammers , .. etc</mat-hint>
+           </mat-form-field>
+
+      <div style="position: relative ; margin-top: 100px ; height: 50px">
+        <button style="position: absolute; right: 0px"mat-button matStepperNext>Next</button>
+        <button  mat-button matStepperPrevious>Back</button>
       </div>
+
     </form>
   </mat-step>
   <mat-step>
@@ -28,7 +63,7 @@
          You are now done.
     <div>
       <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="validatePostRequest()">Confirm</button>
       <button mat-button (click)="openModal(template)">Review</button> -->
     </div>
   </mat-step>
