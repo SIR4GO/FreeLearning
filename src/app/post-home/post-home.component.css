@@ -1,0 +1,48 @@
+.default-link
+{
+  color: black;
+  margin-left: 30px;
+}
+.default-link:hover
+{
+  color: black;
+  text-decoration: none;
+}
+
+
+.custom-container
+{
+  margin: auto;
+  width: 78%;
+}
+
+.body-section{
+  margin-bottom: 50px;
+}
+/* header section */
+header{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-card{
+  display: flex;
+  font-size: 13.5px;
+}
+.header-card .links-section
+{
+  display: flex;
+  justify-content: space-between
+}
+.header-card .links-section .logo
+{
+  font-weight: bold;
+  margin-right: 30px;
+}
+.header-card .links-section .logo img
+{
+  height: 20px;
+}
+
+/* header finish */
