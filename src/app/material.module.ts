@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+// @ts-ignore
 import {
   MatButtonModule,
   MatIconModule,
@@ -12,7 +13,9 @@ import {
   MatChipsModule,
   MatStepperModule,
   MatDividerModule,
-  MatListModule
+  MatListModule,
+  MatSelectModule,
+  MatAutocompleteModule
 } from '@angular/material';
 
 
@@ -30,7 +33,9 @@ import {
     MatChipsModule,
     MatStepperModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatButtonModule,
@@ -45,7 +50,9 @@ import {
     MatChipsModule,
     MatStepperModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+    MatAutocompleteModule
   ]
 })
 export class MaterialModule {}
