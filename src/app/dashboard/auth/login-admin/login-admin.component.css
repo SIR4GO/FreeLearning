@@ -1,9 +1,5 @@
 .page-body
 {
-    background-image:url("../../../../assets/dashboard2.png");
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
     position: relative !important;
 }
 

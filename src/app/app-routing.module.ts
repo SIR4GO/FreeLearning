@@ -5,6 +5,7 @@ import { ArticleComponent } from './article/article.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginAdminComponent } from './dashboard/auth/login-admin/login-admin.component';
 import { PostComponent } from './post/post.component';
+import {PostHomeComponent} from './post-home/post-home.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
      {path: 'post' , component: PostComponent}
 
   ]},
+  {path: 'post-home' , component: PostHomeComponent},
 ];
 
 @NgModule({

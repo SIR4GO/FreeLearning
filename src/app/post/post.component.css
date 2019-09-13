@@ -1,7 +1,15 @@
 .stepper-edit
 {
-  height: 86%;
-  margin: 10px;
-  padding: 10px;
+  /* 10% for toolbar && 90% for stepper */
+  height: 86.8%;
   box-shadow: 0px 0px 2px gray;
+  padding-top: 20px;
+  margin: .9%;
+}
+
+.textArea-edit{
+    overflow-y: scroll;
+    height: 200px;
+    resize: none; /* Remove this if you want the user to resize the textarea */
+
 }
