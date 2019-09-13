@@ -1,5 +1,5 @@
 import { Component, OnInit , TemplateRef } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { PostRequest } from '../models/PostRequest';
 import {validate} from 'class-validator';
@@ -21,6 +21,8 @@ export class PostComponent implements OnInit {
   modalRef: BsModalRef;
   constructor(private _formBuilder: FormBuilder , private modalService: BsModalService) {}
 
+  myControl = new FormControl();
+  options: string[] = ['Grammars', 'vocabulary', 'vocabulary', 'vocabulary', 'Propositions'];
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
