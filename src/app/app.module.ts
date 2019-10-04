@@ -16,6 +16,8 @@ import { LoginAdminComponent } from './dashboard/auth/login-admin/login-admin.co
 import { PostComponent } from './post/post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostHomeComponent } from './post-home/post-home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './post/post.service';
 
 
 
@@ -41,8 +43,9 @@ import { PostHomeComponent } from './post-home/post-home.component';
     ReactiveFormsModule,
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,7 +15,8 @@ import {
   MatDividerModule,
   MatListModule,
   MatSelectModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatPaginatorModule
 } from '@angular/material';
 
 
@@ -35,7 +36,8 @@ import {
     MatDividerModule,
     MatListModule,
     MatSelectModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatPaginatorModule
   ],
   exports: [
     MatButtonModule,
@@ -52,7 +54,8 @@ import {
     MatDividerModule,
     MatListModule,
     MatSelectModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatPaginatorModule
   ]
 })
 export class MaterialModule {}

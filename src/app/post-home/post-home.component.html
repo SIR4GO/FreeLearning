@@ -16,26 +16,31 @@
 
   <section class="body-section">
     <section class="custom-container">
-      <mat-card class="row" style="width: 100% ; height: 255px ; margin-top: 30px; display: flex">
-        <section class="col-9" style="height: 100% ; overflow: hidden ; position: relative">
-          <mat-card-title>Test Card</mat-card-title>
-          <mat-card-content>
-            <p style="max-height: 100px ; overflow: hidden">
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-              bred for hunting.
-            </p>
-            <span style="position: absolute ; bottom: 10px">
-              <small>12/5/2015</small>
-            </span>
-          </mat-card-content>
-        </section>
-       <section class="col-3" style="height: 100%">
-         <img  style="height: 100% ; margin: auto ; width: 100% ;box-shadow: 1px 1px 4px grey; border-radius: 3px" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="">
-       </section>
+      <mat-card  *ngFor="let post of posts" class="row" style="width: 100% ; height: 255px ; margin-top: 30px; display: flex">
+          <section class="col-9" style="height: 100% ; overflow: hidden ; position: relative">
+            <mat-card-title>{{post.title}}</mat-card-title>
+            <mat-card-content>
+              <p style="max-height: 100px ; overflow: hidden">
+                 {{post.description}}
+              </p>
+              <span style="position: absolute ; bottom: 10px">
+                <small>{{post.createDateTime.replace("T"," in ")}}</small>
+              </span>
+            </mat-card-content>
+          </section>
+         <section class="col-3" style="height: 100%">
+           <img  style="height: 100% ; margin: auto ; width: 100% ;box-shadow: 1px 1px 4px grey; border-radius: 3px" src={{post.photo_url}} alt="">
+         </section>
       </mat-card>
+      <!--paginate-->
+      <section style="display: flex ; margin: 20px 0" class="pagination">
+        <mat-paginator style="margin: auto" [length]="length"
+                       [pageSize]="pageSize"
+                       [pageSizeOptions]="pageSizeOptions"
+                       (page)="toPage($event)">
+        </mat-paginator>
+      </section>
+
     </section>
   </section>
   <footer>
@@ -63,12 +68,12 @@
             <h4  style=" color: wheat; margin-bottom: 20px">CONTACT US</h4>
 
             <ul style="list-style: none ;padding: 0">
-              <li style="padding: 5px">
-                <mat-icon style="font-size: 16px" class="icon-edit" aria-hidden="false" aria-label="Example home icon">call</mat-icon>
+              <li style="padding: 5px ; display: flex ;">
+                <mat-icon style="font-size: 16px ; margin: auto 0 auto 5px" class="icon-edit" aria-hidden="false" aria-label="Example home icon">call</mat-icon>
                 +02 - 011478963333
               </li>
-              <li style="padding: 5px">
-                <mat-icon style="font-size: 16px" class="icon-edit" aria-hidden="false" aria-label="Example home icon">mail</mat-icon>
+              <li style="padding: 5px ; display: flex ; ">
+                <mat-icon style="font-size: 16px; margin: auto 0 auto 5px" class="icon-edit" aria-hidden="false" aria-label="Example home icon">mail</mat-icon>
                 EnglishSociety@gmail.com
               </li>
               <li style="padding: 5px"></li>

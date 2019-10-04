@@ -1,8 +1,9 @@
-import { Component, OnInit , TemplateRef } from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { PostRequest } from '../models/PostRequest';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+import {PostRequest} from '../models/PostRequest';
 import {validate} from 'class-validator';
+import {PostService} from './post.service';
 
 
 @Component({
@@ -19,7 +20,9 @@ export class PostComponent implements OnInit {
   postRequest: PostRequest;
 
   modalRef: BsModalRef;
-  constructor(private _formBuilder: FormBuilder , private modalService: BsModalService) {}
+
+  constructor(private _formBuilder: FormBuilder, private modalService: BsModalService, private postService: PostService) {
+  }
 
   myControl = new FormControl();
   options: string[] = ['Grammars', 'vocabulary', 'vocabulary', 'vocabulary', 'Propositions'];
@@ -31,6 +34,9 @@ export class PostComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+
+    this.postRequest = new PostRequest();
+
   }
 
 
@@ -39,17 +45,23 @@ export class PostComponent implements OnInit {
   }
 
 
-  public validatePostRequest() {
+  public createPost() {
 
     validate(this.postRequest).then(errors => { // errors is an array of validation errors
       if (errors.length > 0) {
         console.log('validation failed. errors: ', errors);
+        console.log(this.postRequest);
       } else {
-        console.log('validation succeed');
+        this.postService.createPost(this.postRequest).subscribe(res => {
+            console.log(res);
+          },
+          err => {
+            console.log(err);
+          });
       }
     });
-  }
 
+  }
 
 
 }
