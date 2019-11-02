@@ -1,6 +1,8 @@
 .page-body
 {
     position: relative !important;
+  background: url("../../../../assets/dashboard2.png") center;
+  background-size: cover;
 }
 
 .login-board

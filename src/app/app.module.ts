@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostHomeComponent } from './post-home/post-home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './post/post.service';
+import {LoginService} from './dashboard/auth/login.service';
 
 
 
@@ -45,7 +46,7 @@ import { PostService } from './post/post.service';
     ModalModule.forRoot(),
     HttpClientModule
   ],
-  providers: [PostService],
+  providers: [PostService , LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

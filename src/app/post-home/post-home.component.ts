@@ -22,7 +22,7 @@ export class PostHomeComponent implements OnInit {
     this.getPosts( this.defaultIndex , this.defaultPageSize);
   }
   getPosts(pageIndex , size) {
-    this.postService.getposts( pageIndex , size).subscribe((res) => {
+    this.postService.getPosts( pageIndex , size).subscribe((res) => {
         this.length = res.data.totalElements;
         this.posts = res.data.content;
     }, error => {

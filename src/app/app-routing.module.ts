@@ -10,7 +10,7 @@ import {PostHomeComponent} from './post-home/post-home.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'article' , component: ArticleComponent},
+  { path: 'article/:id' , component: ArticleComponent},
   {path: 'login-admin' , component: LoginAdminComponent},
   { path: 'dashboard' , component: DashboardComponent , children: [
      {path: 'post' , component: PostComponent}

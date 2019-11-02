@@ -20,9 +20,12 @@ export class PostService {
    createPost(post: PostRequest): Observable<any> {
      return this.http.post<any>(SERVER_URL + '/post', post , this.httpOptions);
    }
-   getposts(page: number = 0 , size: number = 5): Observable<any> {
+   getPosts(page: number = 0 , size: number = 5): Observable<any> {
      console.log(SERVER_URL + 'post/list?page=' + page + '&size=' + size);
      return this.http.get(SERVER_URL + 'post/list?page=' + page + '&size=' + size);
+   }
+   getPostById(postId: String): Observable<any> {
+     return this.http.get(SERVER_URL + 'post/' + postId);
    }
 
 

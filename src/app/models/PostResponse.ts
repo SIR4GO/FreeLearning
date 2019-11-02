@@ -1,6 +1,6 @@
 export class PostResponse {
 
-  createDateTime: any;
+  createDateTime: any = '';
   description: any;
   id: any;
   photo_url: any;
