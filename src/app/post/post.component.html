@@ -87,7 +87,7 @@
                   <mat-card-subtitle>12/5/2019</mat-card-subtitle>
                 </mat-card-header>
 
-                <img style="height:300px" mat-card-image src={{postRequest.photo_url}} alt="Photo of a Shiba Inu">
+                <img style="height:300px" mat-card-image [src]= "sanitizer.bypassSecurityTrustResourceUrl(postRequest.photo_url)" alt="Photo of a Shiba Inu">
 
                 <mat-card-content>
                   <p>
@@ -96,7 +96,7 @@
 
 
                   <div style="height: 300px;" class="row">
-                    <iframe class="col-md-12" src={{postRequest.video_embed}}
+                    <iframe class="col-md-12" [src]= "sanitizer.bypassSecurityTrustResourceUrl(postRequest.video_embed)"
                             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                     </iframe>

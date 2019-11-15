@@ -3,11 +3,14 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {SERVER_URL} from '../../EndPointsUrls';
 import {Observable} from 'rxjs/Observable';
 import {LoginRequest} from '../../models/LoginRequest';
+import {Router} from '@angular/router';
+import {of} from 'rxjs/observable/of';
+
 
 @Injectable()
 export class LoginService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
   httpOptions = {
@@ -17,9 +20,20 @@ export class LoginService {
   };
 
   login(loginRequest: LoginRequest): Observable<any> {
-    const basicToken = btoa(loginRequest.username + ':' + loginRequest.password);
-    this.httpOptions.headers.set('Authorization', basicToken);
-    return this.http.get(SERVER_URL + 'login', this.httpOptions);
+    const basicToken = 'Basic' + ' ' + btoa(loginRequest.username + ':' + loginRequest.password);
+    this.httpOptions.headers = this.httpOptions.headers.set('Authorization', basicToken);
+    return this.http.get(SERVER_URL + 'secure/login', this.httpOptions);
+  }
+
+  isLogin(token): Observable<any> {
+
+    if (token) {
+      this.httpOptions.headers = this.httpOptions.headers.set('Authorization', 'Basic' + ' ' + token);
+      return this.http.get(SERVER_URL + 'secure/login', this.httpOptions);
+    }
+
+    this.router.navigate(['/login-admin']);
+    return of(false); // return boolean observable
   }
 
 }

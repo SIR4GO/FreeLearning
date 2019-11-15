@@ -19,6 +19,7 @@ import { PostHomeComponent } from './post-home/post-home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './post/post.service';
 import {LoginService} from './dashboard/auth/login.service';
+import {RootActivationService} from './root-activation.service';
 
 
 
@@ -46,7 +47,7 @@ import {LoginService} from './dashboard/auth/login.service';
     ModalModule.forRoot(),
     HttpClientModule
   ],
-  providers: [PostService , LoginService],
+  providers: [PostService , LoginService ,RootActivationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

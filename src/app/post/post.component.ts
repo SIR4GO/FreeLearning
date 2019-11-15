@@ -4,7 +4,7 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {PostRequest} from '../models/PostRequest';
 import {validate} from 'class-validator';
 import {PostService} from './post.service';
-
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post',
@@ -21,7 +21,7 @@ export class PostComponent implements OnInit {
 
   modalRef: BsModalRef;
 
-  constructor(private _formBuilder: FormBuilder, private modalService: BsModalService, private postService: PostService) {
+  constructor(public sanitizer: DomSanitizer, private _formBuilder: FormBuilder, private modalService: BsModalService, private postService: PostService) {
   }
 
   myControl = new FormControl();

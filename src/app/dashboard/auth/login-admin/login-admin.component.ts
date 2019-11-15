@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import {LoginRequest} from '../../../models/LoginRequest';
 import {validate} from 'class-validator';
 import {LoginService} from '../login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-admin',
@@ -12,9 +13,10 @@ import {LoginService} from '../login.service';
 export class LoginAdminComponent implements OnInit {
 
   hide = true;
+  errorMsg = '';
   loginRequest: LoginRequest;
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService , private router: Router) {
   }
 
   ngOnInit() {
@@ -30,10 +32,11 @@ export class LoginAdminComponent implements OnInit {
         console.log(this.loginRequest);
       } else {
         this.loginService.login(this.loginRequest).subscribe(res => {
-            console.log(res);
+            localStorage.setItem('token' , res.data.token);
+            this.router.navigate(['/dashboard/post']);
           },
           err => {
-            console.log(err);
+              this.errorMsg = '* username or password not correct';
           });
       }
     });
