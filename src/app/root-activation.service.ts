@@ -14,6 +14,7 @@ export class RootActivationService implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
 
     const token = localStorage.getItem('token');
+    console.log(token);
     return this.loginService.isLogin(token).pipe(
       map(() => true),
       catchError(() => {

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {PageEvent} from '@angular/material';
 import {PostService} from '../post/post.service';
 import {PostResponse} from '../models/PostResponse';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-post-home',
@@ -19,6 +21,9 @@ export class PostHomeComponent implements OnInit {
   constructor(private postService: PostService) {}
 
   ngOnInit() {
+
+    const height = $(window).height();
+    $('.full-body').height(height);
     this.getPosts( this.defaultIndex , this.defaultPageSize);
   }
   getPosts(pageIndex , size) {

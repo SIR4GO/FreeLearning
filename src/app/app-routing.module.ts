@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'article/:id' , component: ArticleComponent},
   {path: 'login-admin' , component: LoginAdminComponent},
-  { path: 'dashboard' , component: DashboardComponent , children: [
+  { path: 'dashboard' , component: DashboardComponent , canActivate: [RootActivationService] , children: [
      {path: 'post' , component: PostComponent , canActivate: [RootActivationService]}
   ]},
   {path: 'post-home' , component: PostHomeComponent}

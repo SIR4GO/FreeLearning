@@ -1,53 +1,80 @@
 <section class="custom-container">
 
-     <header>
-        <mat-card  class="header-card">
-                <section class="links-section">
-                    <div class="logo"> <img src="../../assets/logo.png" alt="logo"> FREE LEARNING </div>
-                    <a class="default-link" href="#">HOME</a>
-                    <a class="default-link" href="#">ARTICLES</a>
-                    <a class="default-link" href="#">ABOUT US</a>    
-                </section>
-        </mat-card>
-      
-      </header>
-      
+  <header>
+    <mat-card class="header-card">
+      <section class="links-section">
+        <div class="logo"><img src="../../assets/logo.png" alt="logo"> FREE LEARNING</div>
+        <a class="default-link" href="#">HOME</a>
+        <a class="default-link" href="#">ARTICLES</a>
+        <a class="default-link" href="#">ABOUT US</a>
+      </section>
+    </mat-card>
 
-      <section class="article-body "  >
-        <mat-card class="example-card">
-            <!-- <section class="container">     -->
-            <mat-card-header>
-              <mat-card-title style="font-size:23px">
-                  {{post.title}}
-              </mat-card-title>
-              <mat-card-subtitle>
-                  {{post.createDateTime.replace("T"," at ")}}
-              </mat-card-subtitle>
-            </mat-card-header>
-            <img style="height:400px" mat-card-image [src]="sanitizer.bypassSecurityTrustResourceUrl(post.photo_url)" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-              <p>
-                {{post.description}}
-              </p>
+  </header>
 
-              <div style="height: 550px;" class="row">
-                <iframe class="col-md-12" [src]="sanitizer.bypassSecurityTrustResourceUrl(post.video_embed)"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-                </iframe>
-              </div>
-              
-            
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button>
-            </mat-card-actions>
-            <!-- </section> -->
-          </mat-card>
-        
-       </section>
+  <section class="article-body ">
+    <mat-card class="example-card">
+      <!-- <section class="container">     -->
+      <mat-card-header>
+        <mat-card-title style="font-size:23px">
+          {{post.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{post.createDateTime.replace("T", " at ")}}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img style="height:400px" mat-card-image [src]="sanitizer.bypassSecurityTrustResourceUrl(post.photo_url)"
+           alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="white-space: pre-line ; line-height: 1.8">
+          {{post.description}}
+        </p>
+
+        <div style="height: 450px;" class="row">
+          <iframe class="col-md-12" [src]="sanitizer.bypassSecurityTrustResourceUrl(post.video_embed)"
+                  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+          </iframe>
+        </div>
+
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+      <!-- </section> -->
+    </mat-card>
+  </section>
 </section>
+
+<footer style=" margin-top:auto;">
+  <mat-card style=" background-color: black ; color: white ; font-size: 12px ">
+    <section>
+      <div class="row">
+        <div class="col-md-12">
+
+          <div style="display: flex; justify-content: space-between" class="social-photos">
+            <h6 style="text-align: center ; margin: auto 0 auto 80px; color: wheat"> &copy; ALL Right Reserved English
+              Society 2019</h6>
+            <section style="margin: auto 40px auto 0" class="photo-block">
+              <img style="margin-right: 17px ; width: 32px ; height: 32px;" src="../../assets/face.svg"
+                   alt="facebook photo">
+              <img style="margin-right: 17px ; width: 32px ; height: 32px;" src="../../assets/twitter.svg"
+                   alt="twitter photo">
+              <img style="margin-right: 17px ; width: 32px ; height: 32px;" src="../../assets/vimeo.svg"
+                   alt="vimeo photo">
+              <img style="margin-right: 17px ; width: 32px ; height: 32px;" src="../../assets/youtube.svg"
+                   alt="youtube photo">
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </mat-card>
+
+</footer>
 
 
 

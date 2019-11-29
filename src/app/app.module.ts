@@ -47,7 +47,7 @@ import {RootActivationService} from './root-activation.service';
     ModalModule.forRoot(),
     HttpClientModule
   ],
-  providers: [PostService , LoginService ,RootActivationService],
+  providers: [PostService , LoginService , RootActivationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
