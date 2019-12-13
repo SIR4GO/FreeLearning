@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './post/post.service';
 import {LoginService} from './dashboard/auth/login.service';
 import {RootActivationService} from './root-activation.service';
+import {QuillModule} from 'ngx-quill';
 
 
 
@@ -38,6 +39,7 @@ import {RootActivationService} from './root-activation.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    QuillModule.forRoot(),
     MaterialModule,
     AppRoutingModule,
     FlexLayoutModule,
@@ -45,7 +47,7 @@ import {RootActivationService} from './root-activation.service';
     ReactiveFormsModule,
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [PostService , LoginService , RootActivationService],
   bootstrap: [AppComponent]
