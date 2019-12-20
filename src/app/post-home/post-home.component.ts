@@ -3,6 +3,7 @@ import {PageEvent} from '@angular/material';
 import {PostService} from '../post/post.service';
 import {PostResponse} from '../models/PostResponse';
 import * as $ from 'jquery';
+import {DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class PostHomeComponent implements OnInit {
   pageSizeOptions: number[] = [3];
   posts: PostResponse [];
 
-  constructor(private postService: PostService) {}
+  constructor(public sanitizer: DomSanitizer, private postService: PostService) {}
 
   ngOnInit() {
 

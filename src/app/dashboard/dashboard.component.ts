@@ -1,5 +1,6 @@
-import { Component, OnInit   } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as $ from 'jquery';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -17,10 +18,11 @@ export class DashboardComponent implements OnInit {
 
 // tslint:disable-next-line: member-ordering
 
-  constructor() {}
+  constructor() {
+  }
 
 
-  controllMenue(){
+  controlMenu() {
     console.log('here');
     $('.menu').toggleClass('toggle-menu');
 

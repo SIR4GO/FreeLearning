@@ -16,8 +16,7 @@
     <mat-card class="example-card">
       <!-- <section class="container">     -->
       <mat-card-header>
-        <mat-card-title style="font-size:23px">
-          {{post.title}}
+        <mat-card-title [innerHTML]= "sanitizer.bypassSecurityTrustHtml(post.title)" style="font-size:23px">
         </mat-card-title>
         <mat-card-subtitle>
           {{post.createDateTime.replace("T", " at ")}}
@@ -26,8 +25,7 @@
       <img style="height:400px" mat-card-image [src]="sanitizer.bypassSecurityTrustResourceUrl(post.photo_url)"
            alt="Photo of a Shiba Inu">
       <mat-card-content>
-        <p style="white-space: pre-line ; line-height: 1.8">
-          {{post.description}}
+        <p [innerHTML]= "sanitizer.bypassSecurityTrustHtml(post.description)" style="white-space: pre-line ; line-height: 1.8">
         </p>
 
         <div style="height: 450px;" class="row">

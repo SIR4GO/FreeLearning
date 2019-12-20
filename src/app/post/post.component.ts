@@ -21,11 +21,12 @@ export class PostComponent implements OnInit {
 
   modalRef: BsModalRef;
 
+  // tslint:disable-next-line:max-line-length
   constructor(public sanitizer: DomSanitizer, private _formBuilder: FormBuilder, private modalService: BsModalService, private postService: PostService) {
   }
 
   myControl = new FormControl();
-  options: string[] = ['Grammars', 'vocabulary', 'vocabulary', 'vocabulary', 'Propositions'];
+  options: string[] = ['Grammars', 'vocabulary', 'Propositions'];
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({

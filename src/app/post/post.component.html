@@ -4,7 +4,7 @@
     <form [formGroup]="firstFormGroup" style="display: flex ; flex-direction: column ;">
       <ng-template matStepLabel>Fill out post text</ng-template>
       <mat-form-field style="margin-top:30px">
-        <input matInput name="title" placeholder="Post Title" formControlName="firstCtrl"  [(ngModel)]="postRequest.title"  required>
+        <input matInput name="title" placeholder="Post Title" [formControl]="myControl" [(ngModel)]="postRequest.title"  required>
         <mat-hint align="start"><strong>Post's title should be descriptive</strong> </mat-hint>
       </mat-form-field>
 
@@ -18,9 +18,13 @@
         <mat-hint align="start"><strong>Post's category should be from popup recommendation</strong> </mat-hint>
       </mat-form-field>
 
+
       <mat-form-field style="margin-top:20px" class="example-full-width">
-        <textarea name="description" #post style="resize: none" rows="6" matInput placeholder="Post Text" formControlName="firstCtrl" [(ngModel)]="postRequest.description" required></textarea>
-        <mat-hint align="start"><strong>Characters count </strong> </mat-hint>
+
+        <textarea name="description" #post style="resize: none" rows="6" matInput placeholder="Post Text"
+                  formControlName="firstCtrl" [(ngModel)]="postRequest.description" required>
+        </textarea>
+        <mat-hint align="start" style="cursor: pointer ; color: red ; text-decoration: underline"><strong (click)="openModal(advancedEditor)"> Try advanced editor ? </strong></mat-hint>
         <mat-hint align="end">{{post.value.length}} </mat-hint>
       </mat-form-field>
 
@@ -30,6 +34,8 @@
 
     </form>
   </mat-step>
+
+  // step2
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup" style="display: flex ; flex-direction: column ;">
       <ng-template matStepLabel>Fill out post media</ng-template>
@@ -67,6 +73,16 @@
 </mat-horizontal-stepper>
 
 
+<ng-template style="width: 700px" #advancedEditor>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Post preview</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <quill-editor  [(ngModel)]="postRequest.description"></quill-editor>
+</ng-template>
 
     <!-- post review model section -->
     <ng-template #template>
@@ -83,15 +99,14 @@
             <mat-card class="example-card">
                 <!-- <section class="container">     -->
                 <mat-card-header>
-                  <mat-card-title style="font-size:23px">{{postRequest.title}}</mat-card-title>
+                  <mat-card-title [innerHTML]= "sanitizer.bypassSecurityTrustHtml(postRequest.title)"  style="font-size:23px"></mat-card-title>
                   <mat-card-subtitle>12/5/2019</mat-card-subtitle>
                 </mat-card-header>
 
                 <img style="height:300px" mat-card-image [src]= "sanitizer.bypassSecurityTrustResourceUrl(postRequest.photo_url)" alt="Photo of a Shiba Inu">
 
                 <mat-card-content>
-                  <p style="white-space: pre-line ; line-height: 1.8">
-                    {{postRequest.description}}
+                  <p [innerHTML]= "sanitizer.bypassSecurityTrustHtml(postRequest.description)" style="white-space: pre-line ; line-height: 1.8">
                   </p>
 
 
