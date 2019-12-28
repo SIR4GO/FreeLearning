@@ -4,16 +4,17 @@
     <mat-card class="header-card">
       <section class="links-section">
         <div class="logo"><img src="../../assets/logo.png" alt="logo"> FREE LEARNING</div>
-        <a class="default-link" href="#">HOME</a>
-        <a class="default-link" href="#">ARTICLES</a>
-        <a class="default-link" href="#">ABOUT US</a>
+        <a class="default-link" routerLink="/">HOME</a>
+        <a class="default-link" routerLink="/post-home">ARTICLES</a>
+        <a class="default-link" routerLink="/">ABOUT US</a>
       </section>
     </mat-card>
 
   </header>
 
   <section class="article-body ">
-    <mat-card class="example-card">
+    <mat-spinner style="margin: auto" *ngIf="spinnerFlag"></mat-spinner>
+    <mat-card class="example-card vis" >
       <!-- <section class="container">     -->
       <mat-card-header>
         <mat-card-title [innerHTML]= "sanitizer.bypassSecurityTrustHtml(post.title)" style="font-size:23px">
@@ -22,7 +23,7 @@
           {{post.createDateTime.replace("T", " at ")}}
         </mat-card-subtitle>
       </mat-card-header>
-      <img style="height:400px" mat-card-image [src]="sanitizer.bypassSecurityTrustResourceUrl(post.photo_url)"
+      <img style="height:400px ; " mat-card-image [src]="sanitizer.bypassSecurityTrustResourceUrl(post.photo_url)"
            alt="Photo of a Shiba Inu">
       <mat-card-content>
         <p [innerHTML]= "sanitizer.bypassSecurityTrustHtml(post.description)" style="white-space: pre-line ; line-height: 1.8">

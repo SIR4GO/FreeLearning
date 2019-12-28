@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 // @ts-ignore
 import {
   MatButtonModule,
@@ -37,7 +39,8 @@ import {
     MatListModule,
     MatSelectModule,
     MatAutocompleteModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatButtonModule,
@@ -55,7 +58,8 @@ import {
     MatListModule,
     MatSelectModule,
     MatAutocompleteModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule {}

@@ -5,9 +5,8 @@
         <section class="links-section">
           <div class="logo"> <img src="../../assets/logo.png" alt="logo"> FREE LEARNING </div>
           <section>
-            <a class="default-link" href="#">HOME</a>
-            <a class="default-link" href="#">ARTICLES</a>
-            <a class="default-link" href="#">ABOUT US</a>
+            <a class="default-link" routerLink="/">HOME</a>
+            <a class="default-link" routerLink="/">ABOUT US</a>
           </section>
         </section>
       </section>
@@ -16,6 +15,7 @@
 
   <section class="body-section" style="margin-top: 80px">
     <section class="custom-container">
+      <mat-spinner style="margin: auto" *ngIf="spinnerFlag"></mat-spinner>
       <mat-card  *ngFor="let post of posts" class="row" style="width: 100% ; height: 255px ; margin-top: 30px; display: flex">
         <section class="col-9" style="height: 100% ; overflow: hidden ; position: relative">
           <mat-card-title>

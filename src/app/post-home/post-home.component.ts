@@ -18,6 +18,7 @@ export class PostHomeComponent implements OnInit {
   defaultIndex: any = 0;
   pageSizeOptions: number[] = [3];
   posts: PostResponse [];
+  spinnerFlag = false;
 
   constructor(public sanitizer: DomSanitizer, private postService: PostService) {}
 
@@ -26,9 +27,11 @@ export class PostHomeComponent implements OnInit {
     const height = $(window).height();
     $('.full-body').height(height);
     this.getPosts( this.defaultIndex , this.defaultPageSize);
+    this.spinnerFlag = true;
   }
   getPosts(pageIndex , size) {
     this.postService.getPosts( pageIndex , size).subscribe((res) => {
+        this.spinnerFlag = false;
         this.length = res.data.totalElements;
         this.posts = res.data.content;
     }, error => {
